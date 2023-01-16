@@ -1,13 +1,84 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Righteous', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #c7cdd3;
 }
+
+.card {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform .5s;
+}
+
+.card_back, .card_front {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0.45);
+  backface-visibility: hidden;
+}
+
+.flip{
+  transform: rotateY(180deg);
+}
+
+
+.card_front {
+  transform: rotateY(180deg);
+  background-color: #22043d;
+}
+
+.card_back{
+  color: #22043d;
+  background-color: #b252ea;
+  font-size: 30px;
+}
+
+#gameOver{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  font-size: 50px;
+  /* display: none; */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top:0;
+  left: 0;
+}
+
+#restart {
+  padding: 20px;
+  font-size: 20px;
+  background-color: #b252ea;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+#gameBoard {
+  padding-top: 100px;
+  max-width: 700px;
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
